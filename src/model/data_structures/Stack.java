@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public class Stack<T extends Comparable<T>> implements IStack<T>
+public class Stack<T > implements IStack<T>
 {
 	private T[] elementos;
 	private int tamanio;
@@ -25,7 +25,7 @@ public class Stack<T extends Comparable<T>> implements IStack<T>
 
 			T [ ] copia = elementos;
 			elementos = (T[]) new Object[tamanio];
-			for ( int i = 0; i < tamanio; i++)
+			for ( int i = 0; i < numeroElementos; i++)
 			{
 				elementos[i] = copia[i];
 			} 
@@ -63,7 +63,12 @@ public class Stack<T extends Comparable<T>> implements IStack<T>
 		return x;
 		
 	}
-
+	
+	public int darNumeroElementos()
+	{
+		return numeroElementos;
+	}
+	
 
 
 

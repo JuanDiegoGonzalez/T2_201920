@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public interface IStack <T extends Comparable<T>>
+public interface IStack <T >
 {
 	
 public void push(T item);
