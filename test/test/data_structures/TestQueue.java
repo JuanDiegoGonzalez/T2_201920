@@ -29,20 +29,18 @@ public class TestQueue
 	}
 	
 	@Test
-	public void testNumeroElementos()
+	public void testDarNumeroElementos()
 	{
 		setUp1();
 		assertEquals(1, queue.darNumeroElementos());
 	}
 	
 	@Test
-	public void testNode2()
+	public void testDequeue()
 	{
 		setUp2();
 		
 		assertEquals(1, queue.dequeue());
-		
-		//Con el setUp2 y esta línea se prueban todos los métodos de la clase.
 		assertEquals(2, queue.dequeue());
 	}
 }

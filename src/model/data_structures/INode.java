@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public interface INode <T>
+public interface INode <T extends Comparable<T>>
 {	
 	/**
 	 * Asigna el dato del nodo por el que llega por parametro

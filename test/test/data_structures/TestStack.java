@@ -27,20 +27,18 @@ public class TestStack
 	}
 	
 	@Test
-	public void testNumeroElementos()
+	public void testDarNumeroElementos()
 	{
 		setUp1();
 		assertEquals(1, stack.darNumeroElementos());
 	}
 	
 	@Test
-	public void testNode2()
+	public void testPop()
 	{
 		setUp2();
 		
 		assertEquals(1, stack.pop());
-		
-		//Con el setUp2 y esta línea se prueban todos los métodos de la clase.
 		assertEquals(2, stack.pop());
 	}
 }

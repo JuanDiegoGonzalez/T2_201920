@@ -1,10 +1,10 @@
 package model.data_structures;
 
 /**
- * Clase que representa un nodo en la lista
+ * Clase que representa un nodo en la cola
  * @param <T> tipo de dato a guardar
  */
-public class Node<T> implements INode<T>
+public class Node<T extends Comparable <T>> implements INode<T>
 {
 	/**
 	 * Dato guardado en el nodo
@@ -16,7 +16,6 @@ public class Node<T> implements INode<T>
 	 */
 	private Node siguiente;
 
-
 	/**
 	 * Contructor de la clase
 	 * post: los atributos quedaron inicializados como nulos
@@ -25,7 +24,6 @@ public class Node<T> implements INode<T>
 	{
 		dato = null; 
 		siguiente = null;
-		
 	}
 
 	public void asignarDato(T pDato) 
