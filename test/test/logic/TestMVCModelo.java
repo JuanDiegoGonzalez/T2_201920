@@ -9,18 +9,23 @@ import org.junit.Test;
 public class TestMVCModelo {
 	
 	private MVCModelo modelo;
-	private static int CAPACIDAD=100;
+
 	
 	@Before
 	public void setUp1() {
-		modelo= new MVCModelo(CAPACIDAD);
+		modelo= new MVCModelo();
 	}
-
+	
 	public void setUp2() {
-		for(int i =0; i< CAPACIDAD;i++){
-			modelo.agregar(""+i);
+		modelo= new MVCModelo();
+		try {
+			modelo.cargarArchivoCSV();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
+
 
 	@Test
 	public void testMVCModelo() {
@@ -30,26 +35,10 @@ public class TestMVCModelo {
 
 	@Test
 	public void testDarTamano() {
-		assertEquals(0, modelo.darTamano());  // Modelo con 0 elementos presentes.
-	}
-
-	@Test
-	public void testAgregar() {
-		// TODO Completar la prueba
-		
-	}
-
-	@Test
-	public void testBuscar() {
 		setUp2();
-		// TODO Completar la prueba
+		assertTrue( modelo.darTamano()> 0);  // Modelo con mas de  0 elementos presentes.
 	}
 
-	@Test
-	public void testEliminar() {
-		setUp2();
-		// TODO Completar la prueba
-		
-	}
+
 
 }
