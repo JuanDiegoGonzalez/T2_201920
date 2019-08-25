@@ -61,16 +61,29 @@ public class MVCModelo {
 		return stack.darNumeroElementos();
 	}	
 
+	/**
+	 * Retorna el primer dato guardado
+	 * @return el primer dato guardado
+	 */
 	public Double[] darPrimerDato()
 	{
 		return (Double[]) queue.darPrimerDato();
 	}
 
+	/**
+	 * Retorna el último dato guardado
+	 * @return el último dato guardado
+	 */
 	public Double[] darUltimoDato()
 	{
 		return (Double[]) queue.darUltimoDato();
 	}
 
+	/**
+	 * Retorna una cola con el cluster más grande
+	 * @param horaInicial la hora desde la que se va a hacer la búsqueda
+	 * @return la cola con el cluster más grande
+	 */
 	public Queue darClusterMasGrande(int horaInicial)
 	{
 		Queue respuesta = new Queue();
@@ -124,6 +137,12 @@ public class MVCModelo {
 		return respuesta;
 	}
 
+	/**
+	 * Retorna una cola con los últimos N viajes según la hora especificada
+	 * @param numViajes N, número de viajes a buscar
+	 * @param hora Hora a buscar
+	 * @return una cola con los últimos viajes según la hora dada
+	 */
 	public Queue darUltimosViajesSegunHora(int numViajes, int hora)
 	{
 		Queue respuesta = new Queue();

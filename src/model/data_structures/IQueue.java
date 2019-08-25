@@ -19,4 +19,16 @@ public interface IQueue <T>
 	 * @return el número de elementos de la cola
 	 */
 	public int darNumeroElementos();
+	
+	/**
+	 * Retorna el primer dato de la cola
+	 * @return el primer dato de la cola
+	 */
+	public T darPrimerDato();
+	
+	/**
+	 * Retorna el último dato de la cola
+	 * @return el último dato de la cola
+	 */
+	public T darUltimoDato();
 }
