@@ -7,38 +7,38 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestMVCModelo {
-	
+
 	private MVCModelo modelo;
 
-	
 	@Before
-	public void setUp1() {
+	public void setUp1()
+	{
 		modelo= new MVCModelo();
 	}
-	
-	public void setUp2() {
-		modelo= new MVCModelo();
-		try {
+
+	public void setUp2()
+	{
+		try
+		{
 			modelo.cargarArchivoCSV();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		}
+		catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 	}
 
-
 	@Test
-	public void testMVCModelo() {
+	public void testMVCModelo()
+	{
 		assertTrue(modelo!=null);
 		assertEquals(0, modelo.darTamano());  // Modelo con 0 elementos presentes.
 	}
 
 	@Test
-	public void testDarTamano() {
+	public void testDarTamano()
+	{
 		setUp2();
-		assertTrue( modelo.darTamano()> 0);  // Modelo con mas de  0 elementos presentes.
+		assertTrue(modelo.darTamano() > 0);  // Modelo con mas de 0 elementos presentes.
 	}
-
-
-
 }
