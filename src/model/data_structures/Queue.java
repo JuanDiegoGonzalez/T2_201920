@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public class Queue <T extends Comparable<T>> implements IQueue <T> 
+public class Queue <T> implements IQueue <T> 
 {
 	private Node front;
 	private Node back;
@@ -37,6 +37,13 @@ public class Queue <T extends Comparable<T>> implements IQueue <T>
 		{
 			T respuesta = (T) front.darDato();
 			front = front.darSiguente();
+			numeroElementos--;
+			
+			if(numeroElementos == 0)
+			{
+				back = null;
+			}
+			
 			return respuesta;
 		}
 		else
@@ -48,5 +55,15 @@ public class Queue <T extends Comparable<T>> implements IQueue <T>
 	public int darNumeroElementos()
 	{
 		return numeroElementos;
+	}
+	
+	public T darPrimerDato()
+	{
+		return (T) front.darDato();
+	}
+	
+	public T darUltimoDato()
+	{
+		return (T) back.darDato();
 	}
 }

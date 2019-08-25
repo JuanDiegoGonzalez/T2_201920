@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public interface IQueue <T extends Comparable<T>> 
+public interface IQueue <T> 
 {
 	/**
 	 * Añade un elemento al final de la cola

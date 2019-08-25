@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public class Stack<T extends Comparable <T>> implements IStack<T>
+public class Stack<T> implements IStack<T>
 {
 	private T[] elementos;
 	private int tamanio;
@@ -10,7 +10,7 @@ public class Stack<T extends Comparable <T>> implements IStack<T>
 	public Stack()
 	{
 		tamanio = 1;
-		elementos = (T[]) new Comparable[tamanio];
+		elementos = (T[]) new Object[tamanio];
 		numeroElementos = 0;
 	}
 
@@ -21,7 +21,7 @@ public class Stack<T extends Comparable <T>> implements IStack<T>
 			tamanio = tamanio*2;	
 
 			T[] copia = elementos;
-			elementos = (T[]) new Comparable[tamanio];
+			elementos = (T[]) new Object[tamanio];
 			for(int i = 0; i < numeroElementos; i++)
 			{
 				elementos[i] = copia[i];
@@ -38,16 +38,24 @@ public class Stack<T extends Comparable <T>> implements IStack<T>
 		T respuesta = top;
 
 		elementos[numeroElementos-1] = null;
-		top = elementos[numeroElementos-2];
+		if(numeroElementos>1)
+		{
+			top = elementos[numeroElementos-2];
+		}
+		else
+		{
+			top = null;
+		}
+		
 		numeroElementos --;
 
-		if(numeroElementos == (tamanio/4))
+		if(numeroElementos <= (tamanio/4))
 		{
 			tamanio = tamanio/2;	
 
 			T[] copia = elementos;
-			elementos = (T[]) new Comparable[tamanio];
-			for( int i = 0; i < tamanio; i++)
+			elementos = (T[]) new Object[tamanio];
+			for(int i = 0; i < numeroElementos; i++)
 			{
 				elementos[i] = copia[i];
 			} 

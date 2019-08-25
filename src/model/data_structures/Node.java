@@ -4,7 +4,7 @@ package model.data_structures;
  * Clase que representa un nodo en la cola
  * @param <T> tipo de dato a guardar
  */
-public class Node<T extends Comparable <T>> implements INode<T>
+public class Node<T> implements INode<T>
 {
 	/**
 	 * Dato guardado en el nodo
